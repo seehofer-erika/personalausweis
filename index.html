@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='erika.js'></script>
+</head>
+<style>
+
+    body {
+        padding: 1ex;
+    }
+    .erika {
+        background-image: url('erika.png');
+        background-repeat: no-repeat;
+        height: 100%;
+        width: min-content;
+        height: min-content;
+    }
+
+    .number {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        padding-left: 1ex;
+        font-size: 300%;
+        font-family: monospace, 'Courier New', Courier;
+    }
+
+    .top {
+        font-family: monospace, 'Courier New', Courier;
+        font-size: 200%;
+        padding-top: 1ex;
+        padding-left: 1ex;
+    }
+
+    .description {
+        font-family: sans-serif, 'Arial';
+        font-size: 40%;
+    }
+
+    .trenner {
+        background-color: rgba(0, 0, 0, 0.664);
+        height: 5px;
+        margin-left: 1em;
+        margin-right: 1em;
+        width: auto;
+        margin-top: 2ex;
+    }
+
+    .explanation {
+        font-family: sans-serif, 'Arial';
+        font-size: 80%;
+    }
+
+</style>
+<body>
+    <div class="erika">
+        <div class="top" id="top">
+            <div class="description">Augenfarbe</div>
+            Blau<br>
+            <div class="description">Größe</div>
+            193 CM<br>
+            <div class="description">Datum</div>
+            09.06.23<br>
+            <div class="description">Behörde</div>
+            GPN KARLSRUHE - KLICK ME FOR MORE
+        </div>
+        <div class="trenner"></div>
+        <div class="number" id="number">
+            <code>
+            <span id="magic"></span><br>
+            SEEHOFER&lt;&lt;HORST&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+            </code>
+            </div>
+    </div>
+    <div class="explanation">This page generates valid German ID card identifiers to be used with age verification systems. Made with ♥ during GPN 2023</div>
+
+            <script>
+                function do_magic() {
+                document.getElementById('magic').innerHTML = generate_random();
+                }
+
+                do_magic();
+
+                let timer = window.setInterval(do_magic, 50);
+
+                function copy_handler() {
+                    clearInterval(timer);
+                }
+
+                document.getElementById("number").addEventListener("mouseover", copy_handler);
+                document.getElementById("top").addEventListener("click", () => { clearInterval(timer); timer = window.setInterval(do_magic, 50) });
+            </script>
+
+</body>
+</html>
